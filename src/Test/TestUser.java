@@ -15,6 +15,7 @@ public class TestUser {
 		assertEquals("amin@gmail.com",user.getEmail());
 		assertEquals("Amin@556",user.getPassword());
 		assertEquals(2104,user.getRollNo());
+		System.out.println("hi");
 		try {
 			user.setRollNo(0);
 			user.setEmail(null);

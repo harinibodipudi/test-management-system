@@ -32,5 +32,9 @@ public class User {
 	public void setRollNo(int rollNo) {
 		this.rollNo = rollNo;
 	}
-
+public static void main(String args[]) {
+		
+		System.out.println("hi");
+		
+	}
 }

@@ -10,6 +10,7 @@ public class SignupValidation {
 	Set<String> emailset = new TreeSet<String>();
 	
 	String email,password,confirmpassword;
+
 	//public static void main(String args[]) {
 		//User user1 = new User( "amin@gmail.com","Amin@556",2103);
 		//System.out.print(user1.getEmail());
@@ -48,7 +49,7 @@ public class SignupValidation {
 	    	boolean lowercase=false;
 	    	boolean uppercase=false;
 	    	boolean hasdigit=false;
-	    	if(password.length()>8 &&password.length()<20 && password!=null) {
+	    	if(password.length()>=6 &&password.length()<=20 && password!=null) {
 	    		for(int i=0;i<password.length();i++) {
 	    			char ch=password.charAt(i);
 	    			if(Character.isUpperCase(ch))
@@ -68,19 +69,22 @@ public class SignupValidation {
 	    
 	//email validation
 	    private boolean validEmail(String email) {
-	    	String[] email1=email.split("@");
-	    	
+	    	String[] emailarr=email.split("@");// rhea +gmail.com
+	    System.out.println(emailarr.length);//+email1[1]);	
 	    for(int i=0;i<email.length();i++) {
 	    	char ch=email.charAt(i);
-	    	if(!Character.isLetter(ch) && !Character.isDigit(ch) && ch!='.' && ch!='@' && ch!='_')
-	    		return false;
+	    	if(!Character.isLetter(ch) && !Character.isDigit(ch) && ch!='.' && ch!='@' && ch!='_') {
+	    		//System.out.println("Inside for loop");
+	    		return false;}
 	    }
-	    if(email1[0].length()==0)
+	    
+	    if(emailarr[0].length()==0)	    	
 	    	return false;
-	    if(email1.length!=2)
+	    if(email.length()==2)
 	    	return false;
-	    if(email1[1].contains(".")==false)
-	    	return false;
+	   // if(emailarr[1].contains(".")==true)
+	   // 	return false;
+	    
 	    return true;
 	    }	
 	    }
