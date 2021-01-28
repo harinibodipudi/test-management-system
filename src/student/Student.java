@@ -12,21 +12,11 @@ public class Student {
 	int rollNo;
 	
 	
-	public void studentFunctionality(Map<String,HashMap> namelist) {
-		Scanner sc=new Scanner(System.in);
+	public void studentFunctionality(Map<String,HashMap> namelist, String nameofstudent, String email2, String passofstudent, String confirmPass2, int rollNo2) {
 		SignupValidation obj=new SignupValidation();
-		System.out.println("Enter your name=");
-		String name=sc.nextLine();
-		System.out.println("Enter your email=");
-		String email=sc.nextLine();
-		System.out.println("Enter your pass=");
-		String pass=sc.nextLine();
-		System.out.println("ReEnter your pass=");
-		String confirmPass=sc.nextLine();
-		System.out.println("Enter your rollNO=");
-		int rollNo=sc.nextInt();sc.nextLine();
 		
-		if(obj.checkUserDetails(name, pass,confirmPass)==true)
+		
+		if(obj.checkUserDetails(nameofstudent, passofstudent,confirmPass2)==true)
 		{
 			
 		PrepareQues obj2 = new PrepareQues();

@@ -8,21 +8,17 @@ import java.util.*;
 public class Teacher {
 	
 	LoginValidation obj=new LoginValidation();
-	Scanner sc=new Scanner(System.in);
+	
 	public static Map<String,HashMap> namelist1 = new HashMap<String,HashMap>();
 	
 	
-	public void teacherFunctionality()
+	public void teacherFunctionality(String name, String pass,int noofcourses)
 	{
-		System.out.println("Enter your name=");
-		String name=sc.nextLine();
-		System.out.println("Enter your pass=");
-		String pass=sc.nextLine();
 		
 		if(obj.teacherValidation(name, pass)==true)
 		{
 			PrepareQues obj2=new PrepareQues();
-			namelist1=obj2.teacher();
+			namelist1=obj2.teacher(noofcourses);
 		}
 		else
 		{
@@ -32,19 +28,32 @@ public class Teacher {
 	
 	public static void main(String args[])
 	{
+		Scanner sc=new Scanner(System.in);
 		Teacher admin=new Teacher();
-		admin.teacherFunctionality();
+		System.out.println("Enter your name=");
+		String name=sc.nextLine();
+		System.out.println("Enter your pass=");
+		String pass=sc.nextLine();
+		
+		System.out.println("enter no of courses");
+		int noofcourses = sc.nextInt();sc.nextLine();
+		admin.teacherFunctionality(name,pass,noofcourses);
 		System.out.println("I am resigning as teacher");
 		
-		//PrepareQues t1 = new PrepareQues();
-		//Map<Questions,String> newmap = t1.studentTakingTest();
-		//harini here t1 is a fresh clean obj pa ...we came back to where we started
-		//studentTakingTest() ?
 		
-		
-	
+		System.out.println("Enter your name=");
+		String nameofstudent=sc.nextLine();
+		System.out.println("Enter your email=");
+		String email=sc.nextLine();
+		System.out.println("Enter your pass=");
+		String passofstudent=sc.nextLine();
+		System.out.println("ReEnter your pass=");
+		String confirmPass=sc.nextLine();
+		System.out.println("Enter your rollNO=");
+		int rollNo=sc.nextInt();sc.nextLine();
 		Student user=new Student();
-		user.studentFunctionality(namelist1);
+		
+		user.studentFunctionality(namelist1,nameofstudent,email,passofstudent,confirmPass,rollNo);
 		System.out.println("I am done as student");
 	}
 	

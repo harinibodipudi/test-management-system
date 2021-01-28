@@ -8,12 +8,10 @@ public class PrepareQues extends FormulateQues{
 	//<coursename, <questions, crtans>>
 	
 	
-	public Map<String,HashMap> teacher() {
+	public Map<String,HashMap> teacher(int noofcourses) {
 		
 		Scanner sc = new Scanner(System.in);
-		System.out.println("enter no of courses");
 		
-		int noofcourses=sc.nextInt();
 		
 		
 		for(int i=0;i<noofcourses;i++) {
